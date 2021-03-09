@@ -43,7 +43,7 @@ backend-create-storage:
 backend-test:
 	docker-compose run --rm php-cli php artisan test
 
-backend-bash:
+backend-shell:
 	docker-compose run --rm php-cli bash
 
 backend-migrations:
