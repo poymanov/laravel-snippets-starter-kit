@@ -55,14 +55,16 @@ backend-seed:
 backend-generate-key:
 	docker-compose run --rm php-cli php artisan key:generate
 
-backend-lint:
+backend-php-codesniffer:
 	docker-compose run --rm php-cli composer phpcs
 
-backend-lint-fix:
+backend-php-codesniffer-fix:
 	docker-compose run --rm php-cli composer phpcbf
 
 backend-phpstan:
 	docker-compose run --rm php-cli composer phpstan
+
+backend-lint: backend-php-codesniffer backend-phpstan
 
 frontend-clear:
 	docker run --rm -v ${PWD}:/app -w /app alpine sh -c 'rm -rf .ready'
