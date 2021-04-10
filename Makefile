@@ -61,8 +61,8 @@ backend-lint:
 backend-lint-fix:
 	docker-compose run --rm php-cli composer phpcbf
 
-backend-psalm:
-	docker-compose run --rm php-cli composer psalm
+backend-phpstan:
+	docker-compose run --rm php-cli composer phpstan
 
 frontend-clear:
 	docker run --rm -v ${PWD}:/app -w /app alpine sh -c 'rm -rf .ready'
